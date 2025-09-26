@@ -1,0 +1,9 @@
+{
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"all": "cmosexposure:block/side",
+		"down": "cmosexposure:block/bottom",
+		"up": "cmosexposure:block/camera_stand_top",
+		"particle": "cmosexposure:block/side"
+	}
+}

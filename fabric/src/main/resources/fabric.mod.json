@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "cmosexposure",
+  "version": "${version}",
+  "name": "Exposure: CMOS",
+  "description": "",
+  "authors": [
+    ""
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/cmosexposure/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "de.saschat.cmos.fabric.ExposureComputerModFabric"
+    ],
+    "client": [
+      "de.saschat.cmos.fabric.client.ExposureComputerModFabricClient"
+    ]
+  },
+  "mixins": [
+    "cmosexposure.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "exposure": ">=${exposure}",
+    "computercraft": ">=${computercraft}",
+    "architectury": ">=13.0.8"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

@@ -1,0 +1,44 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "cmosexposure"
+version = "${version}"
+displayName = "Exposure: CMOS"
+authors = ""
+description = '''
+
+'''
+#logoFile = ""
+
+[[dependencies.cmosexposure]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cmosexposure]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cmosexposure]]
+modId = "computercraft"
+type = "required"
+versionRange = "[${computercraft},)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.cmosexposure]]
+modId = "architectury"
+type = "required"
+versionRange = "[13.0.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[mixins]]
+config = "cmosexposure.mixins.json"

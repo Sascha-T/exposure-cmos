@@ -1,0 +1,6 @@
+{
+  "category.cmosexposure":  "Exposure: CMOS",
+  "block.cmosexposure.digitizer": "Digitizer",
+  "container.digitizer": "Digitizer",
+  "block.cmosexposure.stand_controller": "Camera Stand Controller"
+}
