@@ -29,9 +29,9 @@ public abstract class CameraStandEntityMixin implements CameraStandEntityDuck {
     private List<StandControllerTile> tiles = new LinkedList<>();
 
     @Override
-    public void updateRot(double xRot, double yRot) {
+    public void reportRot() {
         for (StandControllerTile tile : tiles) {
-            tile.updateRot(xRot, yRot);
+            tile.updateRot();
         }
     }
 

@@ -7,5 +7,5 @@ public interface CameraStandEntityDuck {
 
     void attach(StandControllerTile tile);
     void detach(StandControllerTile tile);
-    void updateRot(double xRot, double yRot);
+    void reportRot();
 }

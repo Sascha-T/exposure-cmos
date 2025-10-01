@@ -49,8 +49,8 @@ public class StandControllerTile extends BlockEntity {
         } else return attached;
     }
 
-    public void updateRot(double xRot, double yRot) {
+    public void updateRot() {
         if(events)
-            peripherals.operate((x) -> x.updateRotation(xRot, yRot));
+            peripherals.operate((x) -> x.updateRotation(getStandEntity().xRotO, getStandEntity().yRotO));
     }
 }
