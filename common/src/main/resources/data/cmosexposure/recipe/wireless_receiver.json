@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iBi",
+    "iOi",
+    "iIi"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "computercraft:wireless_modem_advanced"
+    },
+    "O": {
+      "item": "cmosexposure:cmos_camera"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "result": {
+    "id": "cmosexposure:wireless_receiver",
+    "count": 1
+  }
+}

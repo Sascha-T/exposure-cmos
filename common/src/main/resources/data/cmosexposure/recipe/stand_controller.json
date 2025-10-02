@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iYi",
+    "iRi",
+    "iIi"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "Y": {
+      "item": "exposure:camera_stand"
+    }
+  },
+  "result": {
+    "id": "cmosexposure:stand_controller",
+    "count": 1
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iXi",
+    "i i",
+    "iIi"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "X": {
+      "item": "cmosexposure:cmos_camera"
+    }
+  },
+  "result": {
+    "id": "cmosexposure:digitizer",
+    "count": 1
+  }
+}
