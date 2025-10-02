@@ -34,6 +34,12 @@ versionRange = "[${computercraft},)"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.cmosexposure]]
+modId = "exposure"
+type = "required"
+versionRange = "[${exposure},)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.cmosexposure]]
 modId = "architectury"
 type = "required"
 versionRange = "[13.0.8,)"
