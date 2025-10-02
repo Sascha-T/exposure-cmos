@@ -13,16 +13,14 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import org.jspecify.annotations.Nullable;
 
 import java.nio.ByteBuffer;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class WirelessReceiverPeripheral implements IPeripheral {
     WirelessReceiverTile tile;
-    public AttachedComputerSet set = new AttachedComputerSet();
+    public List<IComputerAccess> computers = new LinkedList<>();
 
     public WirelessReceiverPeripheral(BlockEntity ent, Direction dir) {
         this.tile = (WirelessReceiverTile) ent;
@@ -37,12 +35,12 @@ public class WirelessReceiverPeripheral implements IPeripheral {
 
     @Override
     public void attach(IComputerAccess computer) {
-        set.add(computer);
+        computers.add(computer);
     }
 
     @Override
     public void detach(IComputerAccess computer) {
-        set.remove(computer);
+        computers.remove(computer);
     }
 
 
@@ -77,7 +75,9 @@ public class WirelessReceiverPeripheral implements IPeripheral {
             size.put(1, data.getWidth());
             size.put(2, data.getHeight());
 
-            set.queueEvent("wireless_frame", data.getPaletteId(), size, retData);
+            for (IComputerAccess computer : computers) {
+                computer.queueEvent("wireless_frame", computer.getAttachmentName(), data.getPaletteId(), size, retData);
+            }
         }, 1, TimeUnit.SECONDS);
     }
 }
