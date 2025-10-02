@@ -278,7 +278,10 @@ public class StandControllerPeripheral implements IPeripheral {
 
     public void updateRotation(double xRot, double yRot) {
         for (IComputerAccess computer : computers) {
-            computer.queueEvent("stand_controller_rotation", computer.getAttachmentName(), yRot, xRot);
+            yRot = yRot % 360;
+            if(yRot < 0)
+                yRot += 360;
+            computer.queueEvent("stand_controller_rotation", computer.getAttachmentName(), yRot % 360, xRot);
         }
     }
 }
