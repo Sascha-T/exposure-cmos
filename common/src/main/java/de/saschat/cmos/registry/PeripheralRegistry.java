@@ -3,6 +3,7 @@ package de.saschat.cmos.registry;
 import dan200.computercraft.api.peripheral.IPeripheral;
 import de.saschat.cmos.blocks.peripheral.DigitizerPeripheral;
 import de.saschat.cmos.blocks.peripheral.StandControllerPeripheral;
+import de.saschat.cmos.blocks.peripheral.WirelessReceiverPeripheral;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.BlockPos;
@@ -27,6 +28,7 @@ public class PeripheralRegistry {
     static {
         register(BlockRegistry.DIGITIZER_BLOCK, TileRegistry.DIGITIZER_TILE, DigitizerPeripheral.class, DigitizerPeripheral::new);
         register(BlockRegistry.STAND_CONTROLLER_BLOCK, TileRegistry.STAND_CONTROLLER_TILE, StandControllerPeripheral.class, StandControllerPeripheral::new);
+        register(BlockRegistry.WIRELESS_RECEIVER_BLOCK, TileRegistry.WIRELESS_RECEIVER_TILE, WirelessReceiverPeripheral.class, WirelessReceiverPeripheral::new);
     }
     public static Map<RegistrySupplier<? extends Block>, PeripheralEntry> freeze() {
         frozen = true;

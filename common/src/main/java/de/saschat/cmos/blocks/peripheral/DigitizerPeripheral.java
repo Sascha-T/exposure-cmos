@@ -29,6 +29,7 @@ public class DigitizerPeripheral implements IPeripheral {
     DigitizerTile tile;
     public DigitizerPeripheral(BlockEntity ent, Direction dir) {
         this.tile = (DigitizerTile) ent;
+        tile.peripherals.add(this);
     }
 
     public List<IComputerAccess> computers = new LinkedList<>();
@@ -37,14 +38,12 @@ public class DigitizerPeripheral implements IPeripheral {
     public void attach(IComputerAccess computer) {
         IPeripheral.super.attach(computer);
         computers.add(computer);
-        tile.peripherals.add(this);
     }
 
     @Override
     public void detach(IComputerAccess computer) {
         IPeripheral.super.detach(computer);
         computers.remove(computer);
-        tile.peripherals.remove(this);
     }
 
     private Frame getFrame() {

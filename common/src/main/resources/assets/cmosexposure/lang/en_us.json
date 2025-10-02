@@ -1,6 +1,11 @@
 {
   "category.cmosexposure":  "Exposure: CMOS",
   "block.cmosexposure.digitizer": "Digitizer",
+  "block.cmosexposure.stand_controller": "Camera Stand Controller",
+  "block.cmosexposure.wireless_receiver": "Wireless Receiver",
   "container.digitizer": "Digitizer",
-  "block.cmosexposure.stand_controller": "Camera Stand Controller"
+  "message.cmosexposure.linked": "Camera linked!",
+  "message.cmosexposure.unlinked": "This camera is not linked",
+  "message.cmosexposure.linked_to": "This camera is linked to %s %s %s",
+  "item.cmosexposure.cmos_camera": "CMOS Camera"
 }

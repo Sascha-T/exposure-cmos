@@ -27,6 +27,7 @@ public class StandControllerPeripheral implements IPeripheral {
 
     public StandControllerPeripheral(BlockEntity ent, Direction dir) {
         this.tile = (StandControllerTile) ent;
+        tile.peripherals.add(this);
     }
 
     public List<IComputerAccess> computers = new LinkedList<>();
@@ -35,14 +36,12 @@ public class StandControllerPeripheral implements IPeripheral {
     public void attach(IComputerAccess computer) {
         IPeripheral.super.attach(computer);
         computers.add(computer);
-        tile.peripherals.add(this);
     }
 
     @Override
     public void detach(IComputerAccess computer) {
         IPeripheral.super.detach(computer);
         computers.remove(computer);
-        tile.peripherals.remove(this);
     }
 
     private void closeCamera() {
