@@ -76,7 +76,7 @@ public class WirelessReceiverPeripheral implements IPeripheral {
             size.put(2, data.getHeight());
 
             for (IComputerAccess computer : computers) {
-                computer.queueEvent("wireless_frame", computer.getAttachmentName(), data.getPaletteId(), size, retData);
+                computer.queueEvent("wireless_frame", computer.getAttachmentName(), data.getPaletteId().toString(), size, retData);
             }
         }, 1, TimeUnit.SECONDS);
     }
