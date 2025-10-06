@@ -1,7 +1,9 @@
 package de.saschat.cmos;
 
 import de.saschat.cmos.items.cmoscamera.CmosCameraViewfinder;
+import de.saschat.cmos.registry.GuiRegistry;
 import de.saschat.cmos.registry.ItemRegistry;
+import de.saschat.cmos.registry.ScreenRegistry;
 import io.github.mortuusars.exposure.client.camera.viewfinder.ViewfinderRegistry;
 import io.github.mortuusars.exposure.client.capture.template.CameraCaptureTemplate;
 import io.github.mortuusars.exposure.client.capture.template.CaptureTemplates;

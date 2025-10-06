@@ -1,6 +1,7 @@
 package de.saschat.cmos.neoforge;
 
 import de.saschat.cmos.ExposureComputerModClient;
+import de.saschat.cmos.registry.neoforge.ScreenRegistryImpl;
 import dev.architectury.platform.forge.PlatformImpl;
 import de.saschat.cmos.ExposureComputerMod;
 import dev.architectury.platform.hooks.EventBusesHooks;
@@ -17,13 +18,14 @@ public final class ExposureComputerModNeoForge {
         // Run our common setup.
         ExposureComputerMod.init();
 
+        EventBusesHooks.getModEventBus(ExposureComputerMod.MOD_ID).get().addListener(ScreenRegistryImpl::registerScreen);
     }
 
     @EventBusSubscriber(modid = ExposureComputerMod.MOD_ID, value = Dist.CLIENT)
     public static class ModBus {
         @SubscribeEvent
         public static void clientSetup(FMLClientSetupEvent event) {
-            event.enqueueWork(ExposureComputerModClient::init);
+            ExposureComputerModClient.init();
         }
 
     }
