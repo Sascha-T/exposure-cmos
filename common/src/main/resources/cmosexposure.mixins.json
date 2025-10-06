@@ -3,13 +3,11 @@
   "package": "de.saschat.cmos.mixin.impl",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
-  "client": [
-    "CameraStandEntityMixin"
-  ],
   "injectors": {
     "defaultRequire": 1
   },
   "mixins": [
-    "CameraStandTurnC2SPMixin"
+    "CameraStandTurnC2SPMixin",
+    "CameraStandEntityMixin"
   ]
 }
