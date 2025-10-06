@@ -3,6 +3,7 @@ package de.saschat.cmos.blocks.peripheral;
 import dan200.computercraft.api.lua.LuaFunction;
 import dan200.computercraft.api.peripheral.IComputerAccess;
 import dan200.computercraft.api.peripheral.IPeripheral;
+import de.saschat.cmos.ExposureComputerMod;
 import de.saschat.cmos.blocks.tiles.StandControllerTile;
 import de.saschat.cmos.mixin.duck.CameraStandEntityDuck;
 import io.github.mortuusars.exposure.world.camera.component.FlashMode;
@@ -14,6 +15,7 @@ import io.github.mortuusars.exposure.world.item.camera.CameraItem;
 import io.github.mortuusars.exposure.world.item.camera.CameraSettings;
 import io.github.mortuusars.exposure.world.item.camera.ShutterState;
 import net.minecraft.core.Direction;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import org.jspecify.annotations.Nullable;
@@ -113,7 +115,7 @@ public class StandControllerPeripheral implements IPeripheral {
         if (standEntity != null && !standEntity.getCamera().isEmpty() && standEntity.getCamera().getItem() instanceof CameraItem item) {
             closeCamera();
             if (item.canTakePhoto(standEntity, standEntity.getCamera())) {
-                standEntity.release();
+                ExposureComputerMod.SERVER.submit(standEntity::release);
                 return true;
             }
         }
